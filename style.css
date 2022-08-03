@@ -1,0 +1,429 @@
+    .overlay {
+        display: none !important;
+    }
+
+    html:not(.editor) body:not(.loaded) main,
+    html:not(.editor) body:not(.loaded) .nav,
+    html:not(.editor) body:not(.loaded) .footer {
+        opacity: 0;
+    }
+
+
+    [mix-blend="screen"] {
+        mix-blend-mode: screen;
+    }
+
+    .container--brain {
+        mix-blend-mode: multiply;
+    }
+
+    .brain-scene {
+        overflow: hidden;
+    }
+
+    .brain-plaque,
+    .brain--image__absolute {
+        pointer-events: none;
+    }
+
+    .brain-plaque.fadeOut {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 300ms;
+    }
+
+    .brain-plaque.fadeIn {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 300ms;
+    }
+
+    html:not(.w-editor) .container.hero.home.w-container {
+        pointer-events: none;
+    }
+
+    .hero--wrapper .button {
+        pointer-events: all;
+    }
+
+    html:not(.w-editor) .brain-device__wrapper .section--hero-image .tech {
+        pointer-events: none;
+    }
+
+    html:not(.w-editor) .molecule__wrapper .section--hero-image .research {
+        pointer-events: none;
+    }
+
+
+    .section--column .grey-cards {
+        overflow-y: hidden;
+    }
+
+
+    @media (min-width:991px) {
+        .nav--link.w--current .nav--link__line {
+            display: block;
+        }
+
+        .nav--link.w--current .nav--link__text {
+            margin-bottom: 16px;
+        }
+    }
+
+    .no-pointer-events {
+        pointer-events: none;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        background: transparent;
+        color: transparent;
+        cursor: pointer;
+        opacity: 0;
+        margin-right: 15px;
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    input[type="date"]:focus {
+        outline: none;
+    }
+
+    /*for ipads*/
+    @media (min-width:1024px) and (max-width:1200px) {
+        .w-container {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+        }
+    }
+
+    html.w-editor #loader {
+        display: none;
+        pointer-events: none;
+    }
+
+    :root {
+        --mask-image: url(https://d2my2wpsc41l6t.cloudfront.net/mindcure/spritesheet.png);
+        --gradient-image: url(https://cors-panda-fze4k.ondigitalocean.app/https://d2my2wpsc41l6t.cloudfront.net/mindcure/gradient.jpg);
+        --steps: 27;
+        --scroll-position: 0px;
+    }
+
+    .mask {
+        mask-image: var(--mask-image);
+        -webkit-mask-image: var(--mask-image);
+        mask-size: 2800vw 100vh;
+        -webkit-mask-size: 2800vw 100vh;
+        mask-position: 0% 0;
+        -webkit-mask-position: 0% 0;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+    }
+
+    .gradient {
+        width: 100vw;
+        position: fixed;
+        /*transform:rotateZ(180deg) rotateX(180deg) translateZ(1000px);*/
+        transform-style: preserve-3d;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url(https://assets-global.website-files.com/602735be17696608f262615b/60358c01ac6fe47749a881f8_white-logo.svg), url(https://d2my2wpsc41l6t.cloudfront.net/mindcure/gradient.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100px, cover;
+        background-position: center center, center center;
+        background-color: #fff;
+    }
+
+    .gradient.loading {
+        z-index: 9999;
+    }
+
+    .gradient {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader-progress {
+        width: 300px;
+        position: absolute;
+        text-align: center;
+        margin-top: 80px;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .lottie-loader {
+        width: 300px;
+        height: 300px;
+    }
+
+    .transition-in {
+        -webkit-animation: mask-play 1.15 steps(var(--steps)) forwards;
+        animation: mask-play 1.15s steps(var(--steps)) forwards;
+    }
+
+    @-webkit-keyframes mask-play {
+        from {
+            -webkit-mask-position: 0% var(--scroll-position);
+            mask-position: 0% var(--scroll-position);
+        }
+
+        to {
+            -webkit-mask-position: 100% var(--scroll-position);
+            mask-position: 100% var(--scroll-position);
+        }
+    }
+
+    @keyframes mask-play {
+        from {
+            -webkit-mask-position: 0% var(--scroll-position);
+            mask-position: 0% var(--scroll-position);
+        }
+
+        to {
+            -webkit-mask-position: 100% var(--scroll-position);
+            mask-position: 100% var(--scroll-position);
+        }
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    /* New overlay for transitions */
+    .disappear {
+        animation: fadeOut 1000ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    .appear-in {
+        animation: fadeIn 750ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    :root {
+        --time: 10s;
+        --starting-angle: 15deg
+    }
+
+    :root {
+        --time: 10s;
+        --starting-angle: 15deg;
+    }
+
+    .overlay {
+        will-change: auto;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -1;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(#1fbcbc 25%, #79b8a9 100%);
+    }
+
+    .overlay img {
+        z-index: 1;
+    }
+
+    .overlay.start {
+        animation: mask 1.5s cubic-bezier(0.75, 0.01, 0.34, 0.98);
+    }
+
+    @keyframes mask {
+        from {
+            clip-path: ellipse(100vh 100vh at 50vw);
+        }
+
+        to {
+            clip-path: ellipse(0vh 0vh at 50vw);
+        }
+    }
+
+    @keyframes loop1 {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loop2 {
+        from {
+            transform: rotate(120deg);
+        }
+
+        to {
+            transform: rotate(480deg);
+        }
+    }
+
+    @keyframes loop3 {
+        from {
+            transform: rotate(270deg);
+        }
+
+        to {
+            transform: rotate(610deg);
+        }
+    }
+
+    @media (orientation: portrait) {
+        .circle {
+            opacity: 0.8;
+            width: 80vh !important;
+            height: 80vh !important;
+        }
+    }
+
+    @media (orientation: portrait) {
+        .circle {
+            opacity: 0.8;
+            width: 100vh !important;
+            height: 100vh !important;
+        }
+    }
+
+    .transition--screen__logo {
+        position: absolute;
+        width: 20vw;
+        max-width: 200px;
+    }
+
+    [data-barba-namespace="survey"] .navbar--banner {
+        display: none;
+    }
+
+    /*BAMBOO HR*/
+
+    .BambooHR-ATS-board a {
+        font-family: 'Playfair Display', sans-serif;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: 600;
+        letter-spacing: -.6px;
+        color: #333;
+    }
+
+    .BambooHR-ATS-board h2 {
+        display: none;
+    }
+
+    .BambooHR-ATS-Jobs-Item {
+        padding-top: 24px;
+        padding-bottom: 27px;
+        border-top: 1px solid #f0f7fa;
+    }
+
+    .BambooHR-ATS-board ul {
+        border-bottom: 0px !important;
+    }
+
+    :root {
+        --container-width: 1200px;
+        --container-padding: calc((100vw - var(--container-width)) / 2);
+    }
+
+
+    .blog--subnav__link {
+        color: #000000 !important;
+    }
+
+    .blog--subnav__link:hover {
+        color: #00b2a9 !important;
+    }
+
+    .copy.pop-up {
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -ms-line-clamp: 2;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        display: -webkit-box;
+        display: box;
+        word-wrap: break-word;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+    }
+
+
+    @media (min-width: 991px) and (max-width: 1047px) {
+
+
+        .container {
+            max-width: 1000px;
+        }
+
+        .nav--container {
+            max-width: 1000px;
+        }
+
+        .filter--selector {
+            width: 120px;
+        }
+
+    }
+
+    @media (max-width: 354px) {
+        .contact--lead {
+            font-size: 24px;
+        }
+    }
+
+    .content--wrapper.partners::-webkit-scrollbar {
+        display: none;
+    }
+
+    .content--wrapper.partners {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .columns--wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .columns--wrapper {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    @media (min-width:1024px) {
+        .BambooHR-ATS-Jobs-List {
+            padding: 40px !important;
+        }
+    }
